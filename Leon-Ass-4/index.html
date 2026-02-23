@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker | AlgoWave Labs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen p-4 md:p-10">
+
+  <main class="max-w-6xl mx-auto">
+    <header class="mb-10">
+      <h1 class="text-3xl font-bold text-[#003366] mb-6">Job Application Tracker</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl border-2 border-blue-500 shadow-sm">
+          <p class="text-gray-500 font-medium">Total</p>
+          <h2 id="total-count" class="text-4xl font-bold text-gray-800">8</h2>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <p class="text-gray-500 font-medium">Interview</p>
+          <h2 id="interview-count" class="text-4xl font-bold text-green-500">0</h2>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+          <p class="text-gray-500 font-medium">Rejected</p>
+          <h2 id="rejected-count" class="text-4xl font-bold text-red-500">0</h2>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+        <h2 class="text-2xl font-bold text-slate-800">Available Jobs</h2>
+        <span id="tab-job-count" class="text-gray-500 font-semibold">8 jobs</span>
+      </div>
+
+      <div class="flex gap-2 mb-8 overflow-x-auto pb-2">
+        <button onclick="filterJobs('all')" id="btn-all"
+          class="btn btn-sm px-6 bg-blue-500 hover:bg-blue-600 text-white border-none normal-case">All</button>
+        <button onclick="filterJobs('interview')" id="btn-interview"
+          class="btn btn-sm px-6 bg-white hover:bg-gray-100 text-gray-500 border-gray-200 normal-case">Interview</button>
+        <button onclick="filterJobs('rejected')" id="btn-rejected"
+          class="btn btn-sm px-6 bg-white hover:bg-gray-100 text-gray-500 border-gray-200 normal-case">Rejected</button>
+      </div>
+
+      <div id="job-container" class="grid grid-cols-1 gap-6">
+      </div>
+
+      <div id="empty-state"
+        class="hidden flex-col items-center justify-center py-20 bg-white rounded-2xl border border-gray-100 shadow-sm">
+        <div class="bg-blue-50 p-6 rounded-2xl mb-4">
+          <i class="fa-solid fa-file-lines text-6xl text-blue-400"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-800">No jobs available</h3>
+        <p class="text-gray-400 mt-2">Check back soon for new job opportunities</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
